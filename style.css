@@ -97,3 +97,28 @@ body {
     background-color: #090909; 
     z-index: 2;
 } */
+.card {
+    /* border: 2px solid red;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8); */
+    padding: 8px;
+    font-size: 10px;
+    text-align: left;
+    width: 128px;
+}
+
+.card img {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+}
+
+
+.cardContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    background-color: #121212;
+    /* padding: 10px; */
+}
+
+
