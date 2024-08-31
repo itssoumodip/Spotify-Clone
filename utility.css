@@ -1,7 +1,7 @@
-.border { 
+/* .border { 
     border: 2px solid rgb(255, 0, 0);
     margin: 3px;
-}
+} */
 
 .flex {
     display: flex;
@@ -50,4 +50,5 @@
     left: 28px;
     font-size: 11px;
 }
+
 

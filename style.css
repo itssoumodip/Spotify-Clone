@@ -2,6 +2,7 @@ body {
     background-color: black;
     color: white;
 }
+
 * {
     font-family: sans-serif;
     margin: 0;
@@ -9,12 +10,8 @@ body {
 }
 
 .left {
-    width: 24vw;
+    width: 22vw;
     /* padding: 10px; */
-}
-
-.right {
-    width: 75vw;
 }
 
 .home {
@@ -62,8 +59,41 @@ body {
     bottom: 0;
 }
 
-.footer a{
+.footer a {
     color: gray;
     text-decoration: none;
     font-weight: 400;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header>* {
+    padding: 16px;
+}
+
+.right {
+    width: 76vw;
+    margin: 6px 2px;
+}
+
+.artists {
+    padding: 6px;
+    background-color: #121212;
+    height: 64vw;
+    /* position: relative;
+    top: 34px; */
+    z-index: 0;
+}
+
+.artists h1 {
+    padding: 44px 13px;
+    font-size: 27px;
+}
+
+/* .nav-color {
+    background-color: #090909; 
+    z-index: 2;
+} */
