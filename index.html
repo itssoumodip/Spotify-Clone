@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utility.css">
+    <link rel="icon" href="https://open.spotify.com/favicon.ico">
     <title>Spotify CLone</title>
 </head>
+
 <body>
-     <div class="container flex bg-black">
-         <div class="left">
+    <div class="container flex bg-black">
+        <div class="left">
             <div class="home bg-gray rounded m-1 p-1">
                 <div class="flex invert"><img src="logo.svg" alt="logo"></div>
-                <ul class = "home-box">
-                    <li class="m-1"><img class ="invert logo" src="home.svg" alt="home">Home</li>
-                    <li class="m-1"><img class ="invert logo" src="search.svg" alt="search">Search</li>
+                <ul class="home-box">
+                    <li class="m-1"><img class="invert logo" src="home.svg" alt="home">Home</li>
+                    <li class="m-1"><img class="invert logo" src="search.svg" alt="search">Search</li>
                 </ul>
             </div>
-            <div class="library rounded bg-gray m-1"> 
-                <div class="heading flex">
-                    <img class="invert logo" src="library.svg" alt="">                    
+            <div class="library rounded bg-gray m-1">
+                <div class="heading flex side">
+                    <img class="invert logo" src="library.svg" alt="">
                     <h2>Your Library</h2>
+                </div>
+                <div class="footer">
+                    <div><a href="https://www.spotify.com/in-en/legal/"><span>Legal</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/safetyandprivacy/"><span>Safety &amp; Privacy Center</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/"><span>Privacy Policy</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/legal/cookies-policy/"><span>Cookies</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3"><span>About Ads</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/accessibility/"><span>Accessibility</span></a></div>
                 </div>
             </div>
         </div>
         <div class="right border">
-            
+            <div class="header">
+                <div class="nav"></div>
+                <div class="buttons">
+                    <button>Singup</button>
+                    <button>Log In</button>
+                </div>
+            </div>
         </div>
-     </div>
+    </div>
 </body>
-</html>
+
+</html>     

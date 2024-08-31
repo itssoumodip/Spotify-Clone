@@ -44,3 +44,10 @@
     height: 24px;
     width: 25px;
 }
+
+.side {
+    position: relative;
+    left: 28px;
+    font-size: 11px;
+}
+
