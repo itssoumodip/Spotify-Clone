@@ -1,0 +1,40 @@
+/* body {
+    background-color: black;
+    color: white;
+} */
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.left {
+    width: 24vw;
+    /* padding: 10px; */
+}
+
+.right {
+    width: 75vw;
+}
+
+.home {
+    /* padding: 35px; */
+    font-weight: 550;
+    align-items: center;
+}
+
+.home ul li {
+    width: 25px;
+    gap: 16px;
+    list-style-type: none;
+    display: flex;
+    padding-top: 14px;
+    align-items: center;
+    justify-content: start;
+}
+
+.home-box {
+    position: relative;
+    top: 3px;
+    right: 6px;
+}
