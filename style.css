@@ -102,7 +102,7 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8); */
     padding: 34px 8px;
-    width: 170px;
+    width: 167px;
     display: flex;
     flex-direction: column;
     /* box-sizing: border-box; */
@@ -163,8 +163,8 @@ body {
 
 .play img {
     position: absolute;
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     right: 17px;
     bottom: 77px;
     opacity: 0;
@@ -173,11 +173,13 @@ body {
 
 
 @keyframes fadeInOpacity {
-    0% {
+    from {
+        transform: translateY(10px);
         opacity: 0;
     }
 
-    100% {
+    to {
+        transform: translateY(0);
         opacity: 1;
     }
 }
