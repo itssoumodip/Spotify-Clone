@@ -89,8 +89,8 @@ body {
 }
 
 .artists h1 {
-    padding: 44px 13px;
-    font-size: 27px;
+    padding: 62px 13px 32px;
+    font-size: 31px;
 }
 
 /* .nav-color {
@@ -101,24 +101,29 @@ body {
     /* border: 2px solid red;
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8); */
-    padding: 8px;
-    font-size: 10px;
-    text-align: left;
-    width: 128px;
+    padding: 34px 8px;
+    width: 170px;
 }
 
 .card img {
     border-radius: 50%;
-    height: 120px;
-    width: 120px;
+    height: 165px;
+    width: 165px;
+}
+
+.card h2 {
+    text-align: left;    
+    font-size: 15px;
+    font-weight: 200;
 }
 
 
 .cardContainer {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto;
     background-color: #121212;
-    /* padding: 10px; */
+    padding: 12px;
+    justify-content: center;
 }
 
 
