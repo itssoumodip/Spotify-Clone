@@ -106,6 +106,7 @@ body {
     display: flex;
     flex-direction: column;
     /* box-sizing: border-box; */
+    position: relative;
 }
 
 .card img {
@@ -155,7 +156,13 @@ body {
 } */
 
 .play img{
-    width: 23px;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    right: 17px;
+    bottom: 77px;
+    opacity: 0;
+    /* transition: all 1s ease-in-out; */
 }
 
 
