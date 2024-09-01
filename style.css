@@ -141,21 +141,27 @@ body {
 
 .card:hover {
     background-color: #1f1f1f;
-    /* .play {
-        opacity: 100;
-        display: flex;
-        position: relative;
-        left: 100px;
-        top: 200px;
-    } */
-  }
+
+    .play img {
+        /* opacity: 100; */
+        /* display: flex; */
+        /* position: relative; */
+        /* left: 100px;*/
+        opacity: 1;
+        animation-name: fadeInOpacity;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-duration: 0.2s;
+    }
+}
+
 /* 
 .play {
     opacity: 0;
     display: flex;
 } */
 
-.play img{
+.play img {
     position: absolute;
     width: 45px;
     height: 45px;
@@ -166,5 +172,12 @@ body {
 }
 
 
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
 
-
+    100% {
+        opacity: 1;
+    }
+}
