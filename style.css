@@ -103,6 +103,9 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.8); */
     padding: 34px 8px;
     width: 170px;
+    display: flex;
+    flex-direction: column;
+    /* box-sizing: border-box; */
 }
 
 .card img {
@@ -112,9 +115,18 @@ body {
 }
 
 .card h2 {
-    text-align: left;    
+    /* text-align: left;     */
     font-size: 15px;
     font-weight: 200;
+}
+
+.card p {
+    /* text-align: left; */
+    font-size: 14px;
+    font-weight: 100;
+    /* gap: 23px; */
+    padding: 7px 0px 0px 0px;
+    color: #b2b2b2;
 }
 
 
@@ -125,5 +137,27 @@ body {
     padding: 12px;
     justify-content: center;
 }
+
+.card:hover {
+    background-color: #1f1f1f;
+    /* .play {
+        opacity: 100;
+        display: flex;
+        position: relative;
+        left: 100px;
+        top: 200px;
+    } */
+  }
+/* 
+.play {
+    opacity: 0;
+    display: flex;
+} */
+
+.play img{
+    width: 23px;
+}
+
+
 
 
