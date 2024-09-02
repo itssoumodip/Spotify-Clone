@@ -98,6 +98,11 @@ body {
     font-size: 31px;
 }
 
+.nav{
+    position: relative;
+    top: 9px;
+}
+
 .nav-color {
     background-color: #090909; 
     /* z-index: 2; */
@@ -197,16 +202,22 @@ body {
     /* padding: 23px; */
     background-color: transparent;
     border: transparent;
-    color: #bfbfbf;
+    color: #8b8b8b;
     font-family: sans-serif;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 15px;
 }
+
+.bt-1:hover{
+    color: #d6d6d6;
+    font-size: 15.5px;
+}
+
 
 .bt-2 {
     padding: 15px 32px;
     border-radius: 26px;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 15px;
 }
 
