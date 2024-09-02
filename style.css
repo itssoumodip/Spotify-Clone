@@ -68,6 +68,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .header>* {
@@ -83,9 +84,13 @@ body {
     padding: 6px;
     background-color: #121212;
     height: 64vw;
-    /* position: relative;
-    top: 34px; */
+    /* z-index: 2; */
+    margin: -9px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
     z-index: 0;
+    width: 1155px;
 }
 
 .artists h1 {
@@ -93,10 +98,10 @@ body {
     font-size: 31px;
 }
 
-/* .nav-color {
+.nav-color {
     background-color: #090909; 
-    z-index: 2;
-} */
+    /* z-index: 2; */
+}
 .card {
     /* border: 2px solid red;
     background-color: rgba(255, 255, 255, 0.8);
@@ -116,9 +121,11 @@ body {
 }
 
 .card h2 {
-    /* text-align: left;     */
+    /* text-align: left; */
     font-size: 15px;
     font-weight: 200;
+    position: relative;
+    top: 23px;
 }
 
 .card p {
@@ -141,7 +148,6 @@ body {
 
 .card:hover {
     background-color: #1f1f1f;
-
     .play img {
         /* opacity: 100; */
         /* display: flex; */
@@ -171,6 +177,38 @@ body {
     /* transition: all 1s ease-in-out; */
 }
 
+.plus {
+    width: 16px;
+    align-items: center;
+    display: flex;
+    position: relative;
+    top: 3px;
+    left: 110px;
+}
+
+.buttons{
+    border-radius: 2px;
+    /* padding: 23px; */
+    display: flex;
+    gap: 23px;
+}
+
+.bt-1 {
+    /* padding: 23px; */
+    background-color: transparent;
+    border: transparent;
+    color: #bfbfbf;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.bt-2 {
+    padding: 15px 32px;
+    border-radius: 26px;
+    font-weight: 700;
+    font-size: 15px;
+}
 
 @keyframes fadeInOpacity {
     from {
