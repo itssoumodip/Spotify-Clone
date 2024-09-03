@@ -1,4 +1,4 @@
-document.querySelector('.showall').addEventListener('click', function() {
+document.querySelector('.showall').addEventListener('click', function () {
     const cardContainer = document.querySelector('.cardContainer');
 
     // Additional artist cards to be added
@@ -124,10 +124,10 @@ document.querySelector('.showall').addEventListener('click', function() {
     this.style.display = 'none';
 
     cardContainer.style.overflowY = 'scroll'
-    cardContainer.style.maxHeight = '60vh';
+    cardContainer.style.maxHeight = '58vh'; 
 });
 
-async function getSongs () {
+async function getSongs() {
     let a = await fetch("http://127.0.0.1:3000/songs/")
     let response = await a.text();
     // console.log(response)
@@ -138,15 +138,24 @@ async function getSongs () {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href)
-        }    
+            songs.push(element.href) 
         }
+    }
     return songs //return promise
 }
 
-async function main () 
-{
-    let songs = getSongs()
+async function main() {
+    let songs = await getSongs()
     console.log(songs)
-}
-main()
+
+    var audio = new Audio(songs[6]);
+    console.log(songs[6])
+
+    document.getElementById('playButton').addEventListener('click', () => {
+        audio.play();
+        audio.addEventListener("loadeddata", () => {
+            console.log(audio.duration, audio.currentSrc, audio.currentTime)
+        })
+    }) 
+}  
+main() 
