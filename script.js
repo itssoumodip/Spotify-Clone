@@ -122,4 +122,7 @@ document.querySelector('.showall').addEventListener('click', function() {
 
     // Optionally, you can remove the "show all" button after the cards are added
     this.style.display = 'none';
+
+    cardContainer.style.overflowY = 'scroll'
+    cardContainer.style.maxHeight = '60vh';
 });

@@ -179,7 +179,34 @@ body {
     padding: 12px;
     justify-content: center;
     cursor: pointer;
+    /* overflow: scroll; */
+    /* max-height: 80vh;
+    overflow-x: hidden; */
 }
+
+.cardContainer {
+    max-height: 60vh; /* Max height for the container */
+    overflow-y: auto; /* Enable vertical scroll */
+}
+
+/* Customize the scrollbar */
+.cardContainer::-webkit-scrollbar {
+    width: 10px;
+}
+
+.cardContainer::-webkit-scrollbar-track {
+    background: #222; /* Scrollbar track color */
+}
+
+.cardContainer::-webkit-scrollbar-thumb {
+    background-color: #333; /* Scrollbar thumb color */
+    border-radius: 10px; /* Scrollbar thumb shape */
+}
+
+.cardContainer::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Scrollbar thumb hover color */
+}
+
 
 .card:hover {
     background-color: #1f1f1f;
