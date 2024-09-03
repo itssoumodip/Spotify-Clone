@@ -1,6 +1,7 @@
 body {
     background-color: black;
     color: white;
+    position: relative;
 }
 
 * {
@@ -82,7 +83,10 @@ body {
     justify-content: space-between;
     /* position: fixed; */
     height: 80px;
+    position: relative;
+    border-radius:9px 0px 0px 0px;
     /* margin: -5px; */
+    width: 1191px;
 }
 
 .header>* {
@@ -97,14 +101,15 @@ body {
 .artists {
     padding: 6px;
     background-color: #121212;
-    height: 64vw;
+    height: 44vw;
     /* z-index: 2; */
     margin: -9px 0px 0px 0px;
     display: flex;
     flex-direction: column;
-    position: absolute;
+    /* position: absolute; */
     z-index: 0;
-    width: 1155px;
+    width: 1179px;
+    /* position: relative; */
 }
 
 .artists h1 {
@@ -179,7 +184,7 @@ body {
     padding: 12px;
     justify-content: center;
     cursor: pointer;
-    /* overflow: scroll; */
+    /* position: relative; */
     /* max-height: 80vh;
     overflow-x: hidden; */
 }
@@ -268,15 +273,15 @@ body {
     /* position: relative; */
     outline: none;
     cursor: pointer;
-    position: fixed;
-    right: 137px;
-    top: 15px;
+    position: absolute;
+    left: 941px;
+    bottom: 8px;
 }
 
 .bt-1:hover{
     color: #d6d6d6;
     font-size: 15.5px;
-    top: 14px;
+    bottom: 8px;
 }
 
 
@@ -311,6 +316,46 @@ body {
 .showall:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+.playbar { 
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    background-color: #000000;
+    width: 100%;
+    padding: 12px;
+    height: 4vw;
+    align-items: center;
+    justify-content: center;
+    left: 0px;
+}
+
+.songButtons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.songButtons img:nth-of-type(1) {
+    height: 37px;
+    width: 26px;
+}
+.songButtons img:nth-of-type(3) {
+    height: 35px;
+    width: 35px;
+}
+.songButtons img:nth-of-type(2) {
+    height: 38px;
+    width: 20px;
+}
+.songButtons img:nth-of-type(4) {
+    height: 38px;
+    width: 20px;
+}
+.songButtons img:nth-of-type(5) {
+    height: 38px;
+    width: 30px;
 }
 
 @keyframes fadeInOpacity {
