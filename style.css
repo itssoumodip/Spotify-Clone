@@ -7,6 +7,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 .left {
@@ -51,7 +52,7 @@ body {
 .library {
     min-height: 38vw;
     position: relative;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .footer {
@@ -61,6 +62,13 @@ body {
     gap: 13px;
     position: absolute;
     bottom: 0;
+}
+
+.logo {
+    cursor: pointer;
+}
+.heading h2{
+    cursor: pointer;
 }
 
 .footer a {
@@ -112,6 +120,10 @@ body {
 .nav{
     position: relative;
     top: 9px;
+    user-select: none;
+}
+.nav img {
+    cursor: pointer;
 }
 
 .nav-color {
@@ -128,6 +140,8 @@ body {
     flex-direction: column;
     /* box-sizing: border-box; */
     position: relative;
+    cursor: pointer;
+    user-select: none;
 }
 
 .card img {
@@ -135,6 +149,7 @@ body {
     height: 165px;
     width: 165px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .card h2 {
@@ -143,6 +158,7 @@ body {
     font-weight: 200;
     position: relative;
     top: 23px;
+    cursor: pointer;
 }
 
 .card p {
@@ -152,6 +168,7 @@ body {
     /* gap: 23px; */
     padding: 28px 0px 0px 0px;
     color: #b2b2b2;
+    cursor: pointer;
 }
 
 
@@ -161,6 +178,7 @@ body {
     background-color: #121212;
     padding: 12px;
     justify-content: center;
+    cursor: pointer;
 }
 
 .card:hover {
@@ -201,6 +219,7 @@ body {
     position: relative;
     top: 3px;
     left: 110px;
+    cursor: pointer;
 }
 
 .buttons{
