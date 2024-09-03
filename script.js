@@ -138,7 +138,7 @@ async function getSongs() {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href) 
+            songs.push(element.href)  
         }
     }
     return songs //return promise
@@ -147,7 +147,7 @@ async function getSongs() {
 async function main() {
     let songs = await getSongs()
     console.log(songs)
-
+    // main button
     var audio = new Audio(songs[6]);
     console.log(songs[6])
 
@@ -157,5 +157,55 @@ async function main() {
             console.log(audio.duration, audio.currentSrc, audio.currentTime)
         })
     }) 
+    document.getElementById('s1').addEventListener('click', () => {
+        var audio = new Audio(songs[0]);
+        audio.play();
+        audio.addEventListener("loadeddata", () => {
+            console.log(audio.duration, audio.currentSrc, audio.currentTime)
+        })
+    }) 
+    document.getElementById('s2').addEventListener('click', () => {
+        var audio = new Audio(songs[1]);
+        audio.play();
+        audio.addEventListener("loadeddata", () => {
+            console.log(audio.duration, audio.currentSrc, audio.currentTime)
+        })
+    }) 
+    document.getElementById('s3').addEventListener('click', () => {
+        var audio = new Audio(songs[2]);
+        audio.play();
+        audio.addEventListener("loadeddata", () => {
+            console.log(audio.duration, audio.currentSrc, audio.currentTime)
+        })
+    }) 
+    document.getElementById('s4').addEventListener('click', () => {
+        var audio = new Audio(songs[3]);
+        audio.play(); 
+        audio.addEventListener("loadeddata", () => {
+            console.log(audio.duration, audio.currentSrc, audio.currentTime)
+        })
+    }) 
+    document.getElementById('s5').addEventListener('click', () => {
+        var audio = new Audio(songs[4]);
+        audio.play();
+        audio.addEventListener("loadeddata", () => {
+            console.log(audio.duration, audio.currentSrc, audio.currentTime)
+        })
+    }) 
+    document.getElementById('s6').addEventListener('click', () => {
+        var audio = new Audio(songs[5]);
+        audio.play();
+        audio.addEventListener("loadeddata", () => {
+            console.log(audio.duration, audio.currentSrc, audio.currentTime)
+        })
+    }) 
+    document.getElementById('s7').addEventListener('click', () => {
+        var audio = new Audio(songs[6]);
+        audio.play();
+        audio.addEventListener("loadeddata", () => {
+            console.log(audio.duration, audio.currentSrc, audio.currentTime)
+        })
+    }) 
+ 
 }  
 main() 
