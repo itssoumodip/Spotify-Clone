@@ -404,6 +404,7 @@ body {
     left: 65px;
     top: 22px;
     color: #efefef;
+    text-transform: capitalize;
 }
 
 .song p {
@@ -413,6 +414,8 @@ body {
     top: 40px;
     color: #b3b3b3;
     font-size: 11px;
+    font-weight: 700;
+    text-transform: capitalize;
 }
 
 .songList {
@@ -424,13 +427,14 @@ body {
     cursor: pointer;
     max-height: 108vh;
     overflow: scroll;
-    /* position: relative; */
+    position: relative;
+    top: 13px;
     max-height: 56vh;
     overflow-x: hidden;
 }
 
 .songList::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
 }
 
 .songList::-webkit-scrollbar-track {

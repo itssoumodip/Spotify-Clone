@@ -125,87 +125,62 @@ document.querySelector('.showall').addEventListener('click', function () {
 
     cardContainer.style.overflowY = 'scroll'
     cardContainer.style.maxHeight = '58vh'; 
-});
-
-async function getSongs() {
-    let a = await fetch("http://127.0.0.1:3000/songs/")
+});async function getSongs() {
+    let a = await fetch("http://127.0.0.1:3000/songs/");
     let response = await a.text();
-    // console.log(response)
-    let div = document.createElement("div")
+    let div = document.createElement("div");
     div.innerHTML = response;
-    let as = div.getElementsByTagName("a")
-    let songs = []
+    let as = div.getElementsByTagName("a");
+    let songs = [];
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href)  
+            songs.push(element.href);
         }
     }
-    return songs //return promise
+    return songs; // Return promise
 }
 
 async function main() {
-    let songs = await getSongs()
-    console.log(songs)
-    // main button
-    var audio = new Audio(songs[6]);
-    console.log(songs[6])
+    let songs = await getSongs();
+    console.log(songs);
 
-    document.getElementById('playButton').addEventListener('click', () => {
-        audio.play();
-        audio.addEventListener("loadeddata", () => {
-            console.log(audio.duration, audio.currentSrc, audio.currentTime)
-        })
-    }) 
-    document.getElementById('s1').addEventListener('click', () => {
-        var audio = new Audio(songs[0]);
-        audio.play();
-        audio.addEventListener("loadeddata", () => {
-            console.log(audio.duration, audio.currentSrc, audio.currentTime)
-        })
-    }) 
-    document.getElementById('s2').addEventListener('click', () => {
-        var audio = new Audio(songs[1]);
-        audio.play();
-        audio.addEventListener("loadeddata", () => {
-            console.log(audio.duration, audio.currentSrc, audio.currentTime)
-        })
-    }) 
-    document.getElementById('s3').addEventListener('click', () => {
-        var audio = new Audio(songs[2]);
-        audio.play();
-        audio.addEventListener("loadeddata", () => {
-            console.log(audio.duration, audio.currentSrc, audio.currentTime)
-        })
-    }) 
-    document.getElementById('s4').addEventListener('click', () => {
-        var audio = new Audio(songs[3]);
-        audio.play(); 
-        audio.addEventListener("loadeddata", () => {
-            console.log(audio.duration, audio.currentSrc, audio.currentTime)
-        })
-    }) 
-    document.getElementById('s5').addEventListener('click', () => {
-        var audio = new Audio(songs[4]);
-        audio.play();
-        audio.addEventListener("loadeddata", () => {
-            console.log(audio.duration, audio.currentSrc, audio.currentTime)
-        })
-    }) 
-    document.getElementById('s6').addEventListener('click', () => {
-        var audio = new Audio(songs[5]);
-        audio.play();
-        audio.addEventListener("loadeddata", () => {
-            console.log(audio.duration, audio.currentSrc, audio.currentTime)
-        })
-    }) 
-    document.getElementById('s7').addEventListener('click', () => {
-        var audio = new Audio(songs[6]);
-        audio.play();
-        audio.addEventListener("loadeddata", () => {
-            console.log(audio.duration, audio.currentSrc, audio.currentTime)
-        })
-    }) 
+    let currentAudio = null;
+    const playButton = document.getElementById('playButton');
+
+    function togglePlayPause(audio) {
+        if (audio.paused) {
+            audio.play();
+            playButton.src = 'svgs/buttons/pause.svg'; // Change to pause button
+        } else {
+            audio.pause();
+            playButton.src = 'svgs/buttons/play.svg'; // Change back to play button
+        }
+    }
  
-}  
-main() 
+    playButton.addEventListener('click', () => {
+        if (currentAudio) {
+            togglePlayPause(currentAudio);
+        }
+    });
+
+    for (let i = 0; i < 18; i++) {
+        if (i < songs.length) {
+            document.getElementById(`s${i + 1}`).addEventListener('click', () => {
+                if (currentAudio && !currentAudio.paused) {
+                    currentAudio.pause();
+                }
+
+                currentAudio = new Audio(songs[i]);
+                togglePlayPause(currentAudio);
+                currentAudio.addEventListener("ended", () => {
+                    playButton.src = 'svgs/buttons/play.svg'; // Reset to play button after song ends
+                });
+            });
+        } else {
+            console.warn(`Button s${i + 1} has no corresponding song.`);
+        }
+    }
+}
+
+main();
