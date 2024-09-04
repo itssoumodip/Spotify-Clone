@@ -124,8 +124,9 @@ document.querySelector('.showall').addEventListener('click', function () {
     this.style.display = 'none';
 
     cardContainer.style.overflowY = 'scroll'
-    cardContainer.style.maxHeight = '58vh'; 
-});async function getSongs() {
+    cardContainer.style.maxHeight = '58vh';
+}); 
+async function getSongs() {
     let a = await fetch("http://127.0.0.1:3000/songs/");
     let response = await a.text();
     let div = document.createElement("div");
@@ -147,6 +148,9 @@ async function main() {
 
     let currentAudio = null;
     const playButton = document.getElementById('playButton');
+    const progressBar = document.getElementById('progressBar');
+    const currentTimeSpan = document.getElementById('currentTime');
+    const durationTimeSpan = document.getElementById('durationTime');
 
     function togglePlayPause(audio) {
         if (audio.paused) {
@@ -157,14 +161,26 @@ async function main() {
             playButton.src = 'svgs/buttons/play.svg'; // Change back to play button
         }
     }
- 
+
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60);
+        return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    }
+
     playButton.addEventListener('click', () => {
         if (currentAudio) {
             togglePlayPause(currentAudio);
         }
     });
 
-    for (let i = 0; i < 18; i++) {
+    progressBar.addEventListener('input', () => {
+        if (currentAudio) {
+            currentAudio.currentTime = (progressBar.value / 100) * currentAudio.duration;
+        }
+    });
+
+    for (let i = 0; i < 16; i++) {
         if (i < songs.length) {
             document.getElementById(`s${i + 1}`).addEventListener('click', () => {
                 if (currentAudio && !currentAudio.paused) {
@@ -173,6 +189,20 @@ async function main() {
 
                 currentAudio = new Audio(songs[i]);
                 togglePlayPause(currentAudio);
+
+                currentAudio.addEventListener('timeupdate', () => {
+                    const currentTime = currentAudio.currentTime;
+                    const duration = currentAudio.duration;
+                    const progressPercent = (currentTime / duration) * 100;
+                    progressBar.value = progressPercent;
+                    currentTimeSpan.textContent = formatTime(currentTime);
+                    progressBar.style.setProperty('--value', `${progressPercent}%`);
+                });
+
+                currentAudio.addEventListener('loadedmetadata', () => {
+                    durationTimeSpan.textContent = formatTime(currentAudio.duration);
+                });
+
                 currentAudio.addEventListener("ended", () => {
                     playButton.src = 'svgs/buttons/play.svg'; // Reset to play button after song ends
                 });
