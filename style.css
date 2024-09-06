@@ -332,23 +332,25 @@ body {
 
 .playbar {
     display: flex;
-    position: absolute;
+    position: fixed; /* Changed from absolute to fixed */
     bottom: 0;
     background-color: #000000;
-    width: 99vw;
+    width: 100vw; /* Ensure it spans the full width */
     padding: 12px;
     height: 4vw;
     align-items: center;
-    justify-content: center;
-    left: 0px;
+    justify-content: space-between; /* Adjust to center elements */
+    left: 0;
+    z-index: 999; /* Ensure it stays on top */
 }
 
 .songButtons {
     display: flex;
     justify-content: center;
     gap: 16px;
-    position: relative;
-    bottom: 6px;
+    position: relative; /* If necessary, use absolute/fixed here */
+    bottom: 0; /* Adjust based on design */
+    right: 683px;
 }
 
 .songButtons img:nth-of-type(1) {
@@ -460,9 +462,11 @@ body {
 .song:hover {
     background-color: #2a2a2a;
     border-radius: 7px;
+
     img:nth-of-type(1) {
         filter: brightness(40%);
     }
+
     img:nth-of-type(2) {
         opacity: 100;
     }
@@ -486,9 +490,11 @@ body {
     max-width: 600px;
     position: absolute;
     bottom: 11px;
+    right: 486px;
 }
 
-#currentTime, #durationTime {
+#currentTime,
+#durationTime {
     color: white;
     font-size: 14px;
 }
@@ -504,6 +510,8 @@ body {
     border-radius: 5px;
     margin: 0 10px;
     outline: none;
+    transition: opacity 0.3s ease;
+
     /* overflow: hidden; */
 }
 
@@ -544,7 +552,8 @@ body {
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    margin-top: -3.5px; /* Adjust to align thumb */
+    margin-top: -3.5px;
+    /* Adjust to align thumb */
 }
 
 #progressBar::-moz-range-thumb {
@@ -572,8 +581,50 @@ body {
     color: transparent;
 }
 
-.song h1{
+.song h1 {
     text-transform: capitalize;
+}
+
+/* For the #songinfo section, ensure consistency in layout: */
+#songinfo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 6px;
+}
+
+#songinfo img {
+    width: 62px;
+    height: 62px;
+    border-radius: 4px;
+    display: none;
+}
+
+#songNameArtist {
+    position: relative;
+}
+
+#songinfo h2 {
+    font-size: 17px;
+    margin: 0;
+}
+
+#songinfo p {
+    font-size: 12px;
+    margin: 4px 0px 0px 0px;
+    top: 20px;
+    /* display: flex; */
+    /* position: relative; */
+    right: 101px;
+    color: #afafaf;
+    
+}
+
+/* Ensure the text is vertically centered */
+#songinfo div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 @keyframes fadeInOpacity {
     from {
