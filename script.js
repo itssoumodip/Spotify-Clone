@@ -125,26 +125,27 @@ document.querySelector('.showall').addEventListener('click', function () {
 
     cardContainer.style.overflowY = 'scroll'
     cardContainer.style.maxHeight = '58vh';
-}); 
-async function getSongs() {
-    let a = await fetch("http://127.0.0.1:3000/songs/");
-    let response = await a.text();
-    let div = document.createElement("div");
-    div.innerHTML = response;
-    let as = div.getElementsByTagName("a");
-    let songs = [];
-    for (let index = 0; index < as.length; index++) {
-        const element = as[index];
-        if (element.href.endsWith(".mp3")) {
-            songs.push(element.href);
-        }
-    }
-    return songs; // Return promise
-}
-
+});
 async function main() {
-    let songs = await getSongs();
-    console.log(songs);
+    // Array of local song files
+    let songs = [
+        'songs/Anuv Jain - HUSN.mp3',
+        'songs/Anuv Jain - JO TUM MERE HO.mp3',
+        'songs/Arijit Singh - KHAIRIYAT.mp3',
+        'songs/Ashe - Moral of the Story.mp3',
+        'songs/Avicii - The Nights.mp3',
+        'songs/King - KODAK.mp3',
+        'songs/King - TERE HO KE.mp3',
+        'songs/King - WARCRY.mp3',
+        'songs/Lana Del Rey - Born To Die.mp3',
+        'songs/Lana Del Rey - Cinnamon Girl.mp3',
+        'songs/Lana Del Rey - Diet Mountain Dew.mp3',
+        'songs/Lana Del Rey - Radio.mp3',
+        'songs/Lana Del Rey - Say Yes To Heaven.mp3',
+        'songs/Lana Del Rey - Summertime Sadness.mp3',
+        'songs/Lana Del Rey - Young and Beautiful.mp3',
+        'songs/The Local Train - Choo Lo.mp3'
+    ];
 
     let currentAudio = null;
     const playButton = document.getElementById('playButton');
@@ -152,6 +153,7 @@ async function main() {
     const currentTimeSpan = document.getElementById('currentTime');
     const durationTimeSpan = document.getElementById('durationTime');
 
+    // Function to play/pause audio
     function togglePlayPause(audio) {
         if (audio.paused) {
             audio.play();
@@ -180,6 +182,7 @@ async function main() {
         }
     });
 
+    // Instead of fetching, just use the local array of song paths
     for (let i = 0; i < 16; i++) {
         if (i < songs.length) {
             document.getElementById(`s${i + 1}`).addEventListener('click', () => {
@@ -187,6 +190,7 @@ async function main() {
                     currentAudio.pause();
                 }
 
+                // Create a new Audio object with the local song file
                 currentAudio = new Audio(songs[i]);
                 togglePlayPause(currentAudio);
 

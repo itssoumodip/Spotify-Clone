@@ -571,6 +571,10 @@ body {
     border-color: transparent;
     color: transparent;
 }
+
+.song h1{
+    text-transform: capitalize;
+}
 @keyframes fadeInOpacity {
     from {
         transform: translateY(10px);
