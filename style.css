@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: #121212;
     color: white;
     position: relative;
 }
@@ -95,7 +95,7 @@ body {
 }
 
 .right {
-    width: 76vw;
+    width: 100%;
     margin: 6px 2px;
 }
 
@@ -332,27 +332,28 @@ body {
 
 .playbar {
     display: flex;
-    position: fixed; /* Changed from absolute to fixed */
+    position: fixed;
     bottom: 0;
     background-color: #000000;
-    width: 100vw; /* Ensure it spans the full width */
+    width: 100%;
     padding: 12px;
-    height: 4vw;
+    height: 12%;
     align-items: center;
-    justify-content: space-between; /* Adjust to center elements */
+    /* justify-content: space-between; */
     left: 0;
-    z-index: 999; /* Ensure it stays on top */
+    z-index: 999;
 }
 
 .songButtons {
     display: flex;
     justify-content: center;
     gap: 16px;
-    position: relative; /* If necessary, use absolute/fixed here */
-    bottom: 7px; /* Adjust based on design */
-    right: 683px;
+    position: relative;
+    bottom: 7px;
+    width: 48%;
+    height: 63%;
+    /* right: 71px; */
 }
-
 .songButtons img:nth-of-type(1) {
     height: 38px;
     width: 25px;
@@ -485,12 +486,13 @@ body {
 
 #playerControls {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     width: 100%;
     max-width: 600px;
-    position: absolute;
-    bottom: 11px;
-    right: 486px;
+    position: relative;
+    /* bottom: 11px; */
+    /* right: 486px; */
+    justify-content: center;
 }
 
 #currentTime,
@@ -626,6 +628,29 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+
+#fixing {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    right: 418px;
+    width: 46%;
+    height: -12%;
+}
+
+  
+
+
+
+
+
+
+
+
+
+
 @keyframes fadeInOpacity {
     from {
         transform: translateY(10px);
