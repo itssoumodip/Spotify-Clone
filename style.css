@@ -349,7 +349,7 @@ body {
     justify-content: center;
     gap: 16px;
     position: relative; /* If necessary, use absolute/fixed here */
-    bottom: 0; /* Adjust based on design */
+    bottom: 7px; /* Adjust based on design */
     right: 683px;
 }
 
