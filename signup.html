@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #121212;
+            color: white;
+        }
+
+        .container {
+            background-color: #1c1c1c;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 300px;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #32CD32;
+        }
+
+        .container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            background: #f5f5f5;
+        }
+
+        .container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #32CD32;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .container button:hover {
+            background-color: #28a745;
+        }
+
+        .container a {
+            color: #32CD32;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        const app = document.getElementById('app');
+        const users = []; // Array to store user data
+
+        function renderLoginPage() {
+            app.innerHTML = `
+                <div class="container">
+                    <h2>Login</h2>
+                    <input type="email" id="email" placeholder="Email" required />
+                    <input type="password" id="password" placeholder="Password" required />
+                    <button onclick="handleLogin()">Login</button>
+                    <p>Don't have an account? <a href="#" onclick="renderRegisterPage()">Register</a></p>
+                </div>
+            `;
+        }
+
+        function renderRegisterPage() {
+            app.innerHTML = `
+                <div class="container">
+                    <h2>Sign Up</h2>
+                    <input type="text" id="username" placeholder="Username" required />
+                    <input type="email" id="email" placeholder="Email" required />
+                    <input type="password" id="password" placeholder="Password" required />
+                    <button onclick="handleRegister()">Register</button>
+                    <p>Already have an account? <a href="#" onclick="renderLoginPage()">Login</a></p>
+                </div>
+            `;
+        }
+
+        function handleLogin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                alert(`Welcome back, ${user.username}!`);
+                window.location.href = 'index.html'; // Redirect to index.html
+            } else {
+                alert('Invalid email or password!');
+            }
+        }
+
+        function handleRegister() {
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (username && email && password) {
+                const userExists = users.some(user => user.email === email);
+
+                if (userExists) {
+                    alert('Email is already registered!');
+                } else {
+                    users.push({ username, email, password });
+                    alert('Registration successful! Please login.');
+                    renderLoginPage();
+                }
+            } else {
+                alert('Please fill all fields!');
+            }
+        }
+
+        function renderHomePage(username) {
+            app.innerHTML = `
+                <div class="container">
+                    <h2>Welcome, ${username}!</h2>
+                    <p>You have successfully logged in.</p>
+                </div>
+            `;
+        }
+
+        // Initial render
+        renderLoginPage();
+    </script>
+</body>
+</html>
