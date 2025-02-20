@@ -10,7 +10,6 @@ body {
 /* Consistent Spacing */
 * {
     box-sizing: border-box;
-    font-family: sans-serif;
     user-select: none;
 }
 
@@ -139,7 +138,6 @@ body {
     flex-direction: column;
     position: relative;
     cursor: pointer;
-    user-select: none;
 }
 
 .card img {
@@ -147,7 +145,6 @@ body {
     height: 165px;
     width: 165px;
     overflow: hidden;
-    cursor: pointer;
 }
 
 .card h2 {
@@ -155,7 +152,6 @@ body {
     font-weight: 200;
     position: relative;
     top: 23px;
-    cursor: pointer;
 }
 
 .card p {
@@ -163,7 +159,6 @@ body {
     font-weight: 100;
     padding: 28px 0px 0px 0px;
     color: #b2b2b2;
-    cursor: pointer;
 }
 
 .cardContainer {
