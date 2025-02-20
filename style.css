@@ -1,13 +1,16 @@
+/* General Styles */
 body {
     background-color: #121212;
     color: white;
-    position: relative;
-}
-
-* {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+}
+
+/* Consistent Spacing */
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
     user-select: none;
 }
 
@@ -51,13 +54,14 @@ body {
     position: relative;
 }
 
+/* Improved Footer */
 .footer {
     display: flex;
-    font-size: 12px;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #1c1c1c;
     color: gray;
-    gap: 13px;
-    position: absolute;
-    bottom: 0;
+    font-size: 12px;
 }
 
 .logo {
@@ -74,13 +78,14 @@ body {
     font-weight: 400;
 }
 
+/* Improved Header */
 .header {
     display: flex;
     justify-content: space-between;
-    height: 80px;
-    position: relative;
-    border-radius: 9px 0px 0px 0px;
-    width: 1191px;
+    align-items: center;
+    padding: 16px;
+    background-color: #1c1c1c;
+    border-bottom: 1px solid #333;
 }
 
 .header>* {
@@ -123,8 +128,12 @@ body {
     background-color: #090909;
 }
 
+/* Improved Card Styles */
 .card {
-    padding: 34px 8px;
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
     width: 167px;
     display: flex;
     flex-direction: column;
@@ -186,7 +195,7 @@ body {
 }
 
 .card:hover {
-    background-color: #1f1f1f;
+    background-color: #2a2a2a;
 }
 
 .card:hover .play img {
@@ -223,46 +232,19 @@ body {
     bottom: 3px;
 }
 
-.bt-1 {
-    padding: 23px;
-    background-color: transparent;
-    border: transparent;
-    color: #8b8b8b;
-    font-family: sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    outline: none;
+/* Improved Button Styles */
+.bt-1, .bt-2 {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
     cursor: pointer;
-    position: absolute;
-    left: 941px;
-    bottom: 8px;
+    transition: background-color 0.3s ease;
 }
 
-.bt-1:hover {
-    color: #d6d6d6;
-    font-size: 15.5px;
-    bottom: 8px;
-}
-
-.bt-2 {
-    padding: 13px 32px;
-    border-radius: 27px;
-    font-weight: 700;
-    font-size: 15px;
-    position: relative;
-    cursor: pointer;
-    height: 49px;
-    width: 115px;
-    bottom: 2px;
-}
-
-.bt-2:hover {
-    height: 51px;
-    width: 117px;
-    font-size: 16px;
-    bottom: 3px;
-    font-weight: 750;
-    background-color: #f0f0f0da;
+.bt-1:hover, .bt-2:hover {
+    background-color: #555;
 }
 
 .showall {
@@ -430,6 +412,7 @@ body {
     font-size: 14px;
 }
 
+/* Improved Progress Bar */
 #progressBar {
     -webkit-appearance: none;
     width: 100%;
@@ -505,30 +488,18 @@ body {
     }
 }
 
-/* Media Queries for Tablets */
+/* Improved Media Queries */
 @media screen and (max-width: 1024px) {
     .container {
         flex-direction: column;
     }
     
-    .left {
+    .left, .right {
         width: 100%;
-        min-height: auto;
     }
     
-    .right {
-        width: 95%;
-        margin: 10px auto;
-    }
-    
-    .header {
+    .header, .footer {
         width: 100%;
-        border-radius: 0;
-    }
-    
-    .artists {
-        width: 100%;
-        height: auto;
     }
     
     .cardContainer {
@@ -553,7 +524,6 @@ body {
     }
 }
 
-/* Media Queries for Mobile Phones */
 @media screen and (max-width: 767px) {
     .left {
         width: 100%;
@@ -632,7 +602,6 @@ body {
     }
 }
 
-/* Media Query for Extra Small Devices */
 @media screen and (max-width: 480px) {
     .cardContainer {
         grid-template-columns: repeat(1, 1fr);
